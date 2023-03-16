@@ -63,7 +63,7 @@ pipeline {
             sh 'rm -rf artifact.zip'
             sh 'zip -r artifact.zip . -x "*node_modules**"'
             withCredentials([sshUserPrivateKey(credentialsId: "final-project", keyFileVariable: 'keyfile')]) {
-                sh 'scp -v -o StrictHostKeyChecking=no -i ${keyfile} /var/lib/jenkins/workspace/finalProject/artifact.zip ${staging_server}:/home/ubuntu/artifact'
+                sh 'scp -v -o StrictHostKeyChecking=no -i ${keyfile} /var/lib/jenkins/workspace/finalProject/artifact.zip ${staging_server}:/home/ubuntu/final_artifact_project'
             }
             sshagent(credentials: ['final-project']) {
                 sh 'ssh -o StrictHostKeyChecking=no ${staging_server} unzip -o /home/ubuntu/final_artifact_project/artifact.zip -d /var/www/html'
