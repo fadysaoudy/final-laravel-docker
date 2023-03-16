@@ -66,7 +66,7 @@ pipeline {
                 sh 'scp -v -o StrictHostKeyChecking=no -i ${keyfile} /var/lib/jenkins/workspace/finalProject/artifact.zip ${staging_server}:/home/ubuntu/artifact'
             }
             sshagent(credentials: ['final-project']) {
-                sh 'ssh -o StrictHostKeyChecking=no ${staging_server} unzip -o /home/ubuntu/final_artifact_project//artifact.zip -d /var/www/html'
+                sh 'ssh -o StrictHostKeyChecking=no ${staging_server} unzip -o /home/ubuntu/final_artifact_project/artifact.zip -d /var/www/html'
                 script {
                     try {
                         sh 'ssh -o StrictHostKeyChecking=no ${staging_server} sudo chmod 777 /var/www/html/storage -R'
