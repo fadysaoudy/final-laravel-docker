@@ -36,6 +36,6 @@ Before you can deploy this project to a Docker container, you will need the foll
 ##### Fadi Saoudy
 
 ### Acknowledgments
-[Jenkins documentation](https://www.jenkins.io/doc/)
-[Docker documentation](https://docs.docker.com/)
-[Laravel documentation](https://laravel.com/docs/10.x)
+- [Jenkins documentation](https://www.jenkins.io/doc/)
+- [Docker documentation](https://docs.docker.com/)
+- [Laravel documentation](https://laravel.com/docs/10.x)
